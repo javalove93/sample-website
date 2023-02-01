@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <style>
+      #person {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="person" src="person.png" width="50" height="50">
+    <script>
+      const person = document.getElementById("person");
+      document.onkeydown = function(event) {
+        switch (event.keyCode) {
+          case 37: // Left arrow
+            person.style.left = (person.offsetLeft - 10) + "px";
+            break;
+          case 38: // Up arrow
+            person.style.top = (person.offsetTop - 10) + "px";
+            break;
+          case 39: // Right arrow
+            person.style.left = (person.offsetLeft + 10) + "px";
+            break;
+          case 40: // Down arrow
+            person.style.top = (person.offsetTop + 10) + "px";
+            break;
+        }
+      };
+    </script>
+  </body>
+</html>
