@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Moving an Image with the Arrow Keys</title>
+  </head>
+  <body>
+    <h1>Moving an Image with the Arrow Keys</h1>
+    <p>This program uses JavaScript to move an image with the arrow keys.</p>
+    <p>To move the image, use the arrow keys on your keyboard.</p>
+    <p>The image will move in the direction of the arrow key that you press.</p>
+    <p>To stop the image from moving, press the <kbd>Space</kbd> key.</p>
+    <p>Try it out!</p>
+    <div id="image">
+      <img src="https://i.stack.imgur.com/00000.png" alt="Image">
+    </div>
+    <script>
+      var image = document.getElementById("image");
+      var arrowKeys = {
+        up: function() {
+          image.style.top = image.style.top + 10 + "px";
+        },
+        down: function() {
+          image.style.top = image.style.top - 10 + "px";
+        },
+        left: function() {
+          image.style.left = image.style.left - 10 + "px";
+        },
+        right: function() {
+          image.style.left = image.style.left + 10 + "px";
+        }
+      };
+      document.addEventListener("keydown", function(e) {
+        var key = e.key;
+        if (arrowKeys[key]) {
+          arrowKeys[key]();
+        }
+      });
+    </script>
+  </body>
+</html>
